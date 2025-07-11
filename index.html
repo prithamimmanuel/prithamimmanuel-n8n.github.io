@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n8n Automation Specialist Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #b8c5d6;
+            margin-bottom: 30px;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #9ca3af;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+
+        .project-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: white;
+        }
+
+        .project-card h3 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #b8c5d6;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .workflow-preview {
+            background: #1f1f1f;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .workflow-preview img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            filter: brightness(0.9);
+            transition: all 0.3s ease;
+        }
+
+        .workflow-preview:hover img {
+            filter: brightness(1.1);
+            transform: scale(1.02);
+        }
+
+        .workflow-preview::before {
+            content: "Live n8n Workflow";
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .results {
+            background: rgba(0, 40, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #28a745;
+            border: 1px solid rgba(40, 167, 69, 0.3);
+        }
+
+        .results h4 {
+            color: #4ade80;
+            margin-bottom: 8px;
+        }
+
+        .results ul {
+            margin-left: 20px;
+        }
+
+        .results li {
+            color: #b8c5d6;
+            margin-bottom: 4px;
+        }
+
+        .skills-section {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-category h3 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            color: #b8c5d6;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-section {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-section h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            font-size: 1.2rem;
+            color: #b8c5d6;
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .demo-badge {
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .demo-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .workflow-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffa500;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .workflow-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Pritham Immanuel Ilango</h1>
+            <p>n8n Automation Specialist | Software Engineer</p>
+            <p class="tagline">API Integration • Workflow Automation • Data Processing</p>
+            <div style="margin: 20px 0; color: #b8c5d6; font-size: 1.1rem;">
+                <strong>Currently:</strong> Software Engineer at Amazon | <strong>📍</strong> Chennai, Tamil Nadu
+            </div>
+            <a href="#contact" class="cta-button">Let's Discuss Your Automation Needs</a>
+        </div>
+
+        <!-- Professional Background Section -->
+        <div class="skills-section">
+            <h2>Background & Experience</h2>
+            <div style="background: rgba(0, 0, 0, 0.2); padding: 25px; border-radius: 15px; margin-bottom: 30px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                    <div>
+                        <h3 style="color: #ffa500; margin-bottom: 15px; font-size: 1.4rem;">🏢 Amazon Experience</h3>
+                        <ul style="color: #b8c5d6; list-style: none;">
+                            <li style="padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">Working with microservices and CI/CD pipelines</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">API integrations with telecom partners</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">Data processing for Alexa services</li>
+                            <li style="padding: 8px 0;">Service deployment and maintenance</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="color: #ffa500; margin-bottom: 15px; font-size: 1.4rem;">💼 Automation Skills</h3>
+                        <ul style="color: #b8c5d6; list-style: none;">
+                            <li style="padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">AWS services and cloud infrastructure</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">Data analytics and reporting</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">Healthcare and business systems</li>
+                            <li style="padding: 8px 0;">Document processing and workflows</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2>n8n Automation Solutions</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>🔗 System Integration</h3>
+                    <ul>
+                        <li>API connections and data sync</li>
+                        <li>CRM integrations (HubSpot, Salesforce)</li>
+                        <li>Database management (Airtable, Sheets)</li>
+                        <li>Cloud service connections</li>
+                        <li>Multi-system workflows</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>📱 Marketing Automation</h3>
+                    <ul>
+                        <li>Social media posting workflows</li>
+                        <li>Content scheduling systems</li>
+                        <li>Lead capture and processing</li>
+                        <li>Email automation sequences</li>
+                        <li>Analytics and reporting</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>⚡ Reliable Systems</h3>
+                    <ul>
+                        <li>Error handling and monitoring</li>
+                        <li>Workflow optimization</li>
+                        <li>Data validation and cleanup</li>
+                        <li>Scheduled automation</li>
+                        <li>Performance monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="section">
+            <h2>n8n Projects & Workflows</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-icon">🔄</div>
+                    <h3>Data Processing Pipeline</h3>
+                    <p>Automated data sync workflow with API calls, data transformation, and conditional routing. Includes error handling and status monitoring.</p>
+                    
+                    <div class="workflow-preview">
+                        <img src="screenshots/simple_data_pipeline.png" alt="Smart Data Pipeline n8n Workflow">
+                    </div>
+
+                    <div class="workflow-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Nodes</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">APIs</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">Active</div>
+                            <div class="stat-label">Status</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-tag">n8n</span>
+                        <span class="tech-tag">JSONPlaceholder</span>
+                        <span class="tech-tag">Webhooks</span>
+                        <span class="tech-tag">Scheduling</span>
+                    </div>
+                    
+                    <div class="results">
+                        <h4>🎯 Features:</h4>
+                        <ul>
+                            <li>Automatic error handling and retry logic</li>
+                            <li>Data validation and transformation</li>
+                            <li>Webhook notifications for status updates</li>
+                            <li>Scheduled execution with monitoring</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="demo-badge">📺 View Workflow</div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🎯</div>
+                    <h3>Lead Management Workflow</h3>
+                    <p>Lead capture system connecting Google Sheets, Airtable, and HubSpot. Includes duplicate detection and automated email notifications.</p>
+                    
+                    <div class="workflow-preview">
+                        <img src="screenshots/lead_management_system.png" alt="Lead Management System n8n Workflow">
+                    </div>
+
+                    <div class="workflow-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Systems</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">Active</div>
+                            <div class="stat-label">Status</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">Auto</div>
+                            <div class="stat-label">Processing</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-tag">Google Sheets</span>
+                        <span class="tech-tag">Airtable</span>
+                        <span class="tech-tag">HubSpot</span>
+                        <span class="tech-tag">Email</span>
+                    </div>
+                    
+                    <div class="results">
+                        <h4>🎯 Features:</h4>
+                        <ul>
+                            <li>Automated lead data processing</li>
+                            <li>Duplicate detection and handling</li>
+                            <li>Multi-platform data synchronization</li>
+                            <li>Email notifications for new leads</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="demo-badge">📺 View Workflow</div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">📱</div>
+                    <h3>Social Media Automation</h3>
+                    <p>Content scheduling system with Airtable integration and automated posting to social platforms. Includes status tracking and updates.</p>
+                    
+                    <div class="workflow-preview">
+                        <img src="screenshots/social_media_scheduler.png" alt="Social Media Scheduler n8n Workflow">
+                    </div>
+
+                    <div class="workflow-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Steps</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">Auto</div>
+                            <div class="stat-label">Posting</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">Live</div>
+                            <div class="stat-label">Updates</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-tag">Airtable</span>
+                        <span class="tech-tag">Twitter API</span>
+                        <span class="tech-tag">Content Processing</span>
+                        <span class="tech-tag">Status Tracking</span>
+                    </div>
+                    
+                    <div class="results">
+                        <h4>🎯 Features:</h4>
+                        <ul>
+                            <li>Content management and scheduling</li>
+                            <li>Multi-platform posting capability</li>
+                            <li>Automated status updates</li>
+                            <li>Content processing and formatting</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="demo-badge">📺 View Workflow</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section" id="contact">
+            <h2>Let's Work Together</h2>
+            <p>Interested in n8n automation? Let's discuss how I can help streamline your workflows and processes.</p>
+            <div style="margin: 20px 0; color: #b8c5d6; font-size: 1.1rem;">
+                📧 prithamimmanuel@gmail.com | 📱 +91 96001 01622 | 📍 Chennai, Tamil Nadu
+            </div>
+            <div class="contact-links">
+                <a href="mailto:prithamimmanuel@gmail.com" class="contact-link">💬 Get in Touch</a>
+                <a href="tel:+919600101622" class="contact-link">📱 Call Me</a>
+                <a href="#" class="contact-link">📅 Schedule a Chat</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Demo badge click handlers
+        document.querySelectorAll('.demo-badge').forEach(badge => {
+            badge.addEventListener('click', function() {
+                alert('Demo videos would be linked here! Create 2-3 minute screen recordings showing each workflow in action, including the n8n interface and live executions.');
+            });
+        });
+
+        // Add subtle animation to workflow previews
+        document.querySelectorAll('.workflow-preview').forEach(preview => {
+            preview.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.02)';
+            });
+            preview.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
